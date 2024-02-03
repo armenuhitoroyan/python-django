@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CTBLOG Homeoage</title>
+    <style>
+      .nav-element {
+        list-style: none;
+        color: cornflowerblue;
+      }
+      .nav-element > li {
+        float: left;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-element">
+          <li>
+            <a href="/">Home Page</a>
+          </li>
+          <li>
+            <a href="../contact-us/">Contact Us</a>
+          </li>
+          <li>
+            <a href="#">About Us</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <br>
+   
+    {%block content%}
+
+    {%endblock%}
+  </body>
+</html>
