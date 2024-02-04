@@ -5,6 +5,11 @@
 <p>{{blog.description}}</p>
 
 <h3>Comments</h3>
+{%for comment in comments%}
+<p><b>{{comment.name}}</b></p>
+<p>{{comment.message}}</p>
+{%endfor%}
+
 {%if errors%} {{errors}} {%endif%}
 
 <form action="" method="post">
