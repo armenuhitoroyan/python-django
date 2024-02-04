@@ -18,3 +18,11 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.first_name + " " + self.last_name
+    
+class Comment(models.Model):
+    blog = models.ForeignKey(Blog, related_name="blog_comment", on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.blog.title + " " + self.message

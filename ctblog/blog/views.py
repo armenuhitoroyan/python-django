@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import Blog, Contact
-from .forms import ContactForm
+from .forms import ContactForm, CommentForm
 
 # Create your views here.
 
@@ -28,5 +28,14 @@ def blog_detail(request, pk):  # pk for details' id
     context = {}
     blog = Blog.objects.get(id=pk)
     context["blog"] = blog
+
+    if request.POST:
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            obj = comment_form.save(commit=False)
+            obj.blog = context["blog"]
+            obj.save()
+        else:
+            context["errors"] = comment_form.errors
 
     return render(request, "blog_detail.html", context)
