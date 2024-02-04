@@ -2,4 +2,9 @@
 
 {%block content%}
 <h1>Welcome to CT Blog Home Page</h1>
+
+{%for blog in blogs%}
+<p><a href="/blog-detail/{{blog.id}}/">{{blog.title}}</a></p>
+<hr>
+{%endfor%}
 {%endblock%}
