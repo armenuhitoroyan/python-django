@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from .models import Blog
+from .models import Blog, Contact
 
 # Create your views here.
 
@@ -12,6 +12,14 @@ def home_page(request):
     return render(request, "home.html", context)
 
 def contact_us(request):
+
+    if request.POST:
+       new_contact = Contact.objects.create(
+            first_name = request.POST['first_name'],
+            last_name = request.POST['last_name'],
+            email = request.POST['email'],
+            message = request.POST['message']
+        )
     # return HttpResponse("Welcome to Contact Us page!")
     return render(request, "contact_us.html", {})
 
