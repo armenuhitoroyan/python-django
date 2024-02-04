@@ -1,0 +1,13 @@
+.nav-element {
+  list-style: none;
+  color: cornflowerblue;
+}
+.nav-element > li {
+  float: left;
+  margin-right: 10px;
+}
+
+.post-title {
+    color: darkred;
+    text-decoration: none;
+}

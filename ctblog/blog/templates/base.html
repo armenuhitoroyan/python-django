@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+  {%load static%}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'style.css'%}" />
     <title>CTBLOG Homeoage</title>
-    <style>
-      .nav-element {
-        list-style: none;
-        color: cornflowerblue;
-      }
-      .nav-element > li {
-        float: left;
-        margin-right: 10px;
-      }
-    </style>
   </head>
   <body>
     <header>
       <nav>
         <ul class="nav-element">
           <li>
-            <a href="{%url 'blog:home'%}">Home Page</a>
+            <a class="post-title" href="{%url 'blog:home'%}">Home Page</a>
           </li>
           <li>
-            <a href="{%url 'blog:contact-us'%}">Contact Us</a>
+            <a class="post-title" href="{%url 'blog:contact-us'%}">Contact Us</a>
           </li>
           <li>
-            <a href="#">About Us</a>
+            <a class="post-title" href="#">About Us</a>
           </li>
         </ul>
       </nav>
     </header>
-    <br>
-   
-    {%block content%}
+    <br />
 
-    {%endblock%}
+    {%block content%} {%endblock%}
   </body>
 </html>
